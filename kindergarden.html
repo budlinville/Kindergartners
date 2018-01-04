@@ -1,0 +1,189 @@
+<html>
+<head>
+	<script text = "text/javascript">
+		var genderText;
+		var bodyTypeText;
+		var paralyzeText;
+		var moralText;
+		var fightingText;
+		var throwText;
+	
+		function calculate() {
+			var total = 0;
+		
+			var age = myForm.age.value;
+			var height = myForm.heightFeet.value * 12 + myForm.heightInches.value;
+			var weight = myForm.weight.value;
+			var miles = myForm.miles.value;
+			
+			var genderMultiplier = 1;
+			var bodyTypeMultiplier = 1;
+			var fightingMultiplier = 1;
+			
+			var paralyzeBool;
+		
+			if (age < 20) {
+				total += 10
+			} else if (age <= 30) {
+				total += 12
+			} else if (age <= 40) {
+				total += 8
+			} else {
+				total += 6;
+			}
+			
+			if (paralyzeText == "yes") {
+				paralyzeBool = true;
+			} else {
+				paralyzeBool = false;
+			}
+			
+			if (height <= 60) {
+				total += 4;
+			} else if (height <= 68) {
+				total += 9;
+			} else if (height <= 74) {
+				total += 13
+			} else if (height <= 80) {
+				total += 17;
+			} else {
+				total += 20;
+			}
+			
+			total += (weight / 30);
+			
+			if (genderText == "male") {
+				total = total * 1.3;
+			} else if (genderText == "female") {
+				//nothing
+			} else {
+				total = total * .8;
+			}
+			
+			if (bodyTypeText == "Donaldson") {
+				total = total - 12;
+			} else if (bodyTypeText == "Hane") {
+				total = total - 2;
+			} else if (bodyTypeText == "Killen") {
+				total = total + 1;
+			} else if (bodyTypeText == "Garlow") {
+				total = total + 6;
+			} else if (bodyTypeText == "Snapp") {
+				total = total + 8;
+			} else {
+			
+			}
+			
+			if (moralText == "yes") {
+				total = total * 0.9;
+			} else {
+			 total = total * 1.1;
+			}
+			
+			if (fightingText == "no") {
+				total = total - 6;
+			} else {
+				total = total + 4;
+			}
+			
+			if (throwText == "0") {
+				total +=2;
+			} else if (throwText == "6") {
+				total +=4;
+			} else if (throwText == "11") {
+				total +=6;
+			} else if (throwText == "16") {
+				total +=8;
+			} else if (throwText == "21") {
+				total +=10;
+			}
+			
+			if (fightingText == "yes") {
+				total = total * 1.1
+			} 
+			
+			total = total + miles * (1.5);
+			
+			if (paralyzeBool) {
+				total = 3;
+			}
+			
+			document.getElementById("count").innerHTML = (Math.round(total) + " kindergardeners");
+		}
+		
+		function setGenderText(x) {
+			genderText = x;
+		}
+		
+		function setBodyTypeText(x) {
+			bodyTypeText = x;
+		}
+		
+		function setParalyzeText(x) {
+			paralyzeText = x;
+		}
+		
+		function setMoralText(x) {
+			moralText = x;
+		}
+		
+		function setFightingText(x) {
+			fightingText = x;
+		}
+		
+		function setThrowText(x) {
+			throwText = x;
+		}
+	
+	</script>
+</head>
+<body>
+	<h2>How many kindergardeners could you realistically take in a fight?</h2>
+	<form name = "myForm">
+		Age:  
+		<input type = "text" name = "age"><br/>
+		<br/> Height:
+		<input type = "text" name = "heightFeet"> feet
+		<input type = "text" name = "heightInches"> inches <br/>
+		<br/> Weight:
+		<input type = "text" name = "weight"> lbs <br/>
+		
+		<br/>Gender:<br/>
+		<input type="radio" name="gender" onclick="setGenderText(this.value)" value="male">Male<br>
+		<input type="radio" name="gender" onclick="setGenderText(this.value)" value="female">Female<br>
+		<input type="radio" name="gender" onclick="setGenderText(this.value)" value="other">Other<br>
+		
+		<br/> Who's general body type does your own resemble?<br/>
+		<input type="radio" name="bodyType" onclick="setBodyTypeText(this.value)" value="Donaldson">Donaldson<br>
+		<input type="radio" name="bodyType" onclick="setBodyTypeText(this.value)" value="Hane">Hane<br>
+		<input type="radio" name="bodyType" onclick="setBodyTypeText(this.value)" value="Killen">Killen (John)<br>
+		<input type="radio" name="bodyType" onclick="setBodyTypeText(this.value)" value="Garlow">Garlow<br>
+		<input type="radio" name="bodyType" onclick="setBodyTypeText(this.value)" value="Snapp">Snapp<br>
+		
+		<br/>At this point in your life, how many consecutive miles do you think you could run?
+		<input type = "text" name = "miles"> <br/>
+		
+		<br/>Are you now or have you ever been in a wheelchair/lost movement below your shoulders?<br/>
+		<input type="radio" name="paralyze" onclick="setParalyzeText(this.value)" value="yes">Yes<br>
+		<input type="radio" name="paralyze" onclick="setParalyzeText(this.value)" value="no">No<br>
+		
+		<br/>Are you morally opposed to using one child as a sort-of club-based weapon to fend off other children?<br/>
+		<input type="radio" name="moral" onclick="setMoralText(this.value)" value="yes">Yes<br>
+		<input type="radio" name="moral" onclick="setMoralText(this.value)" value="no">No<br>
+		
+		<br/>Do you have any self-defense training/martial arts experience/etc.?<br/>
+		<input type="radio" name="fighting" onclick="setFightingText(this.value)" value="yes">Yes<br>
+		<input type="radio" name="fighting" onclick="setFightingText(this.value)" value="no">No<br>
+		
+		<br/>Approximately how far do you think you could throw a kindergardener?<br/>
+		<input type="radio" name="throw" onclick="setThrowText(this.value)" value="0">1-5 feet<br>
+		<input type="radio" name="throw" onclick="setThrowText(this.value)" value="6">6-10 feet<br>
+		<input type="radio" name="throw" onclick="setThrowText(this.value)" value="11">11-15 feet<br>
+		<input type="radio" name="throw" onclick="setThrowText(this.value)" value="16">16-20 feet<br>
+		<input type="radio" name="throw" onclick="setThrowText(this.value)" value="21">21+ feet<br>
+		
+		<button type="button" onclick="calculate()">Calculate</button>
+		<h2 id = "count"></h2>
+	</form>
+</body>
+</html>
