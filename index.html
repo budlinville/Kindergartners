@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="styles.css">
+	<script src="scripts.js"></script>
+</head>
+<body>
+	<div class="panel panel-primary">
+		<div class="panel-heading">
+			<h1 class="panel-title">How many kindergardeners could you realistically take in a fight?</h1>
+		</div>
+		
+		<div class="panel-body">
+			This web application seeks to help people answer one of the most important and divisive questions 
+			of our time. For years, people have sought to answer this question for themselves. Their methods
+			of doing so were often flawed or entirely random. This application seeks to answer the age-old 
+			question with an unbiased algorithm based on years of research and observation. Rest assured that 
+			no kindergartners were harmed in the making of this program.
+		</div>
+	</div>
+	
+	<form name = "myForm">
+		
+		<div class="panel panel-info">
+			<div class="panel-heading">
+				<h3 class="panel-title">Age</h3>
+			</div>
+			
+			<div class="panel-body">
+				<input type = "text" name = "age">
+			</div>
+		</div>
+		
+		<div class="panel panel-info">
+			<div class="panel-heading">
+				<h3 class="panel-title">Height</h3>
+			</div>
+			
+			<div class="panel-body">
+				<input type = "text" name = "heightFeet"> feet<br>
+				<input type = "text" name = "heightInches"> inches 
+			</div>
+		</div>
+		
+		<div class="panel panel-info">
+			<div class="panel-heading">
+				<h3 class="panel-title">Weight</h3>
+			</div>
+			
+			<div class="panel-body">
+				<input type = "text" name = "weight"> lbs.
+			</div>
+		</div>
+		
+		<div class="panel panel-info">
+			<div class="panel-heading">
+				<h3 class="panel-title">Gender</h3>
+			</div>
+			
+			<div class="panel-body">
+				<input type="radio" name="gender" onclick="setGenderText(this.value)" value="male">Male<br>
+				<input type="radio" name="gender" onclick="setGenderText(this.value)" value="female">Female<br>
+				<input type="radio" name="gender" onclick="setGenderText(this.value)" value="other">Other
+			</div>
+		</div>
+		
+		<div class="panel panel-info">
+			<div class="panel-heading">
+				<h3 class="panel-title">Who's general body type does your own resemble?</h3>
+			</div>
+			
+			<div class="panel-body">
+				<input type="radio" name="bodyType" onclick="setBodyTypeText(this.value)" value="BaleFighter">Christian Bale (The Fighter)<br>
+				<input type="radio" name="bodyType" onclick="setBodyTypeText(this.value)" value="Depp">Johnny Depp<br>
+				<input type="radio" name="bodyType" onclick="setBodyTypeText(this.value)" value="Hanks">Tom Hanks<br>
+				<input type="radio" name="bodyType" onclick="setBodyTypeText(this.value)" value="BaleBatman">Christian Bale (Batman)<br>
+				<input type="radio" name="bodyType" onclick="setBodyTypeText(this.value)" value="Pitt">Brad Pitt
+			</div>
+		</div>
+		
+		<div class="panel panel-info">
+			<div class="panel-heading">
+				<h3 class="panel-title">At this point in your life, how many consecutive miles do you think you could run?</h3>
+			</div>
+			
+			<div class="panel-body">
+				<input type = "text" name = "miles"> 
+			</div>
+		</div>
+		
+		<div class="panel panel-info">
+			<div class="panel-heading">
+				<h3 class="panel-title">Are you morally opposed to using one child as a sort-of club-based weapon to fend off other children?</h3>
+			</div>
+			
+			<div class="panel-body">
+				<input type="radio" name="moral" onclick="setMoralText(this.value)" value="yes">Yes<br>
+				<input type="radio" name="moral" onclick="setMoralText(this.value)" value="no">No
+			</div>
+		</div>
+		
+		<div class="panel panel-info">
+			<div class="panel-heading">
+				<h3 class="panel-title">Do you have any self-defense training/martial arts experience/etc.?</h3>
+			</div>
+			
+			<div class="panel-body">
+				<input type="radio" name="fighting" onclick="setFightingText(this.value)" value="yes">Yes<br>
+				<input type="radio" name="fighting" onclick="setFightingText(this.value)" value="no">No
+			</div>
+		</div>
+		
+		<div class="panel panel-info">
+			<div class="panel-heading">
+				<h3 class="panel-title">Approximately how far do you think you could throw a kindergardener?</h3>
+			</div>
+			
+			<div class="panel-body">
+				<input type="radio" name="throw" onclick="setThrowText(this.value)" value="0">1-5 feet<br>
+				<input type="radio" name="throw" onclick="setThrowText(this.value)" value="6">6-10 feet<br>
+				<input type="radio" name="throw" onclick="setThrowText(this.value)" value="11">11-15 feet<br>
+				<input type="radio" name="throw" onclick="setThrowText(this.value)" value="16">16-20 feet<br>
+				<input type="radio" name="throw" onclick="setThrowText(this.value)" value="21">21+ feet
+			</div>
+		</div>
+		
+		<div class="panel panel-primary" id="resOuter">
+			<div class="panel-body" id="resInner">
+				<button type="button" class="btn btn-primary" onclick="calculate()">CALCULATE</button>
+			</div>
+			<div class="panel-body">
+				<h2 id = "count">Results will be displayed here.</h2>
+			</div>
+		</div>
+	</form>
+</body>
+</html>

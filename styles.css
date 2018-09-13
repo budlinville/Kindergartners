@@ -1,0 +1,38 @@
+.panel-primary {
+	margin: auto;
+    width: 50%;
+	margin-bottom: 10px;
+	maring-top: 10px;
+}
+
+.panel-info {
+	margin: auto;
+    width: 50%;
+	margin-bottom: 10px;
+}
+
+.panel-warning {
+	margin: auto;
+	padding: 0px;
+    width: 35%;
+	margin-bottom: 10px;
+}
+
+.btn-primary {
+	margin: 0px;
+    width: 100%;
+	height: 100%;
+    padding: 10px;
+}
+
+#resInner {
+	padding: 0px;
+}
+
+#resOuter {
+	width: 35%;
+}
+
+body {
+	background-color: #f8f8f8;
+}
